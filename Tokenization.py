@@ -2,16 +2,10 @@ import re
 
 import tiktoken
 def getTokens(file:str):
-  
   with open(file,'r',encoding='utf-8') as f:
     raw_text = f.read()
-
-  
-    
     raw_text = re.split(r'([,,:;?_!"()\']|--|\s)',raw_text)
-
     raw_text = [item.strip() for item in raw_text if item.strip()]
-    
     return raw_text
 
 def CreateVocab(tokens:list[str]):
